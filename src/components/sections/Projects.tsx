@@ -1,6 +1,12 @@
 import SGOVdashboard from "../../assets/images/SGOV/SGOVdashboard.png";
+import SGOVordenes from "../../assets/images/SGOV/SGOVdashboard.png";
+import SGOVreportes from "../../assets/images/SGOV/SGOVdashboard.png";
+
+import { useState } from "react";
 
 function Projects() {
+  const [openSGOV, setOpenSGOV] = useState(false);
+
   return (
     <section id="projects" className="bg-slate-900 text-white py-24">
       <div className="max-w-6xl mx-auto px-6">
@@ -61,7 +67,10 @@ function Projects() {
                 </p>
               </div>
 
-              <button className="bg-blue-600 px-5 py-2 rounded-lg">
+              <button
+                onClick={() => setOpenSGOV(true)}
+                className="bg-blue-600 hover:bg-blue-500 px-5 py-2 rounded-lg"
+              >
                 Más información
               </button>
               <p className="text-yellow-400 text-sm">🔒 Proyecto privado</p>
@@ -97,10 +106,10 @@ function Projects() {
               </h3>
 
               <p className="text-slate-400 mb-4">
-                API desarrollada para procesar reportes PDF generados por
-                escáneres automotrices Launch y G-Scan, permitiendo extraer
-                automáticamente VIN, placa, kilometraje, fecha de diagnóstico y
-                códigos DTC mediante análisis de texto y OCR.
+                Lee reportes PDF de escáneres automotrices y extrae VIN, placa,
+                kilometraje, fecha y códigos de falla, sin digitarlos. Probada
+                con reportes reales de Launch y compatible con G-Scan según
+                imágenes de muestra. Diseñada para integrarse a SGOV.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-4">
@@ -132,14 +141,116 @@ function Projects() {
               </div>
 
               <p className="text-yellow-400 text-sm">🔒 Repositorio privado</p>
-              <p className="text-slate-400 text-sm mt-2">
-                Utilizado como componente complementario de SGOV para la
-                extracción automática de diagnósticos automotrices.
-              </p>
             </div>
           </div>
         </div>
       </div>
+
+      {openSGOV && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={() => setOpenSGOV(false)}
+        >
+          <div
+            className="bg-slate-800 border border-slate-700 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-start mb-6">
+              <div>
+                <h3 className="text-3xl font-bold text-white">SGOV</h3>
+                <p className="text-slate-400">
+                  Sistema para talleres automotrices
+                </p>
+              </div>
+              <button
+                onClick={() => setOpenSGOV(false)}
+                className="text-slate-400 hover:text-white text-2xl"
+              >
+                ✕
+              </button>
+            </div>
+
+            <img
+              src={SGOVdashboard}
+              alt="Dashboard de SGOV"
+              className="rounded-lg mb-8 w-full object-contain"
+            />
+
+            <h4 className="text-blue-400 font-semibold mb-2">El problema</h4>
+            <p className="text-slate-300 mb-6">
+              El taller no contaba con ningún sistema. Las fotos de evidencia
+              quedaban en los celulares, los acuerdos se hacían por chat de
+              WhatsApp o de palabra, y los diagnósticos en PDF estaban sueltos.
+              No existía un registro único, así que encontrar el historial de un
+              vehículo era difícil y era fácil que algo se perdiera. Toda la
+              información dependía de un solo celular: si se malograba o se
+              perdía, se perdía también el registro de clientes, fotos y
+              conversaciones.
+            </p>
+
+            <h4 className="text-blue-400 font-semibold mb-2">La solución</h4>
+            <p className="text-slate-300 mb-6">
+              Con SGOV todo queda guardado de forma centralizada en un servidor,
+              accesible desde cualquier equipo, sin depender de un celular.
+            </p>
+
+            <h4 className="text-blue-400 font-semibold mb-2">
+              Funciones principales
+            </h4>
+            <ul className="list-disc list-inside text-slate-300 space-y-1 mb-6">
+              <li>
+                Diagnóstico del vehículo, con integración al escáner para
+                llenado automático (próximamente)
+              </li>
+              <li>Órdenes de trabajo con registro de fotografías</li>
+              <li>
+                Historial vehicular: diagnósticos, órdenes, costos, repuestos
+                usados y trabajos realizados
+              </li>
+              <li>Gestión de clientes, vehículos, inventario y proveedores</li>
+              <li>Reportes de toda la operación</li>
+              <li>Usuarios y roles con control de acceso</li>
+            </ul>
+
+            <div className="grid md:grid-cols-2 gap-4 mb-8">
+              <img
+                src={SGOVordenes}
+                alt="Órdenes de trabajo en SGOV"
+                className="rounded-lg object-contain"
+              />
+              <img
+                src={SGOVreportes}
+                alt="Reportes en SGOV"
+                className="rounded-lg object-contain"
+              />
+            </div>
+
+            <h4 className="text-blue-400 font-semibold mb-2">
+              Estado y mi rol
+            </h4>
+            <p className="text-slate-300 mb-2">
+              ✅ En fase de entrega al cliente.
+            </p>
+            <p className="text-slate-300 mb-8">
+              Diseñé y desarrollé el sistema completo: análisis, base de datos,
+              API e interfaz.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="#contact"
+                onClick={() => setOpenSGOV(false)}
+                className="inline-block bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-lg text-white"
+              >
+                Quiero algo así
+              </a>
+              <p className="text-yellow-400 text-sm">
+                🔒 Código privado por acuerdo con el cliente
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

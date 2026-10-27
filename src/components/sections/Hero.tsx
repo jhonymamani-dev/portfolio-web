@@ -9,13 +9,12 @@ function Hero() {
           <h1 className="text-6xl md:text-8xl font-bold mb-4">Jhony Mamani</h1>
 
           <h2 className="text-2xl md:text-4xl text-slate-300 mb-6">
-            Full Stack Developer
+            Sistemas web a medida que automatizan tu negocio
           </h2>
 
           <p className="text-slate-400 max-w-2xl text-lg mb-8">
-            Desarrollador Full Stack especializado en aplicaciones web, sistemas
-            empresariales y soluciones para la optimización de procesos mediante
-            tecnología.
+            Desarrollo sistemas empresariales y APIs que reemplazan procesos
+            manuales por software rápido, seguro y fácil de usar.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -24,7 +23,7 @@ function Hero() {
             </button>
 
             <button className="border border-slate-700 px-6 py-3 rounded-lg hover:bg-slate-800 transition">
-              <a href="#contact">Contactarme</a>
+              <a href="#contact">Cuéntame tu proyecto</a>
             </button>
           </div>
         </div>

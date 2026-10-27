@@ -7,15 +7,15 @@ function About() {
         <div className="grid md:grid-cols-2 gap-16">
           <div>
             <p className="text-slate-300 text-lg leading-8">
-              Soy Bachiller en Ingeniería de Sistemas y desarrollador Full Stack
-              especializado en la creación de aplicaciones web modernas y
-              sistemas empresariales.
+              Soy bachiller en Ingeniería de Sistemas y desarrollo software a
+              medida para empresas que quieren dejar atrás el papel y las hojas
+              de cálculo. Me enfoco en sistemas web y APIs que se entregan
+              funcionando y pueden crecer con el negocio.
             </p>
 
             <p className="text-slate-400 text-lg leading-8 mt-6">
-              Me apasiona la automatización de procesos, el desarrollo de
-              soluciones digitales y la transformación tecnológica de las
-              empresas a través de software eficiente y escalable.
+              Mi forma de trabajar es simple: entiendo cómo opera tu negocio,
+              propongo una solución clara y te acompaño hasta que esté en uso.
             </p>
           </div>
 

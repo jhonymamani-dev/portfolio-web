@@ -22,9 +22,10 @@ function Skills() {
             <h3 className="text-blue-400 font-semibold mb-4">Backend</h3>
 
             <div className="space-y-2">
-              <p>Node.js</p>
+              <p text-base>Node.js</p>
               <p>Express.js</p>
               <p>REST APIs</p>
+              <p>Autenticación JWT</p>
             </div>
           </div>
 
